@@ -1,0 +1,29 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.17763.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.3.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 10.0.0.219:50252.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 10.0.0.219:56041.
+[Info]    ClientManager         New client [0] connected [10.0.0.219:50252|10.0.0.219:56041].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 10.0.0.219:50257.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 10.0.0.219:58536.
+[Info]    ClientManager         New client [1] connected [10.0.0.219:50257|10.0.0.219:58536].
+[Info]    ClientManager         Client [0] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 10.0.0.219:50264.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 10.0.0.219:59590.
+[Info]    ClientManager         New client [2] connected [10.0.0.219:50264|10.0.0.219:59590].
+[Error]   ClientManager         An plugin encountered an error whilst handling the ClientConnected event. The client will still be connected. (See logs for exception)
+                                 UnityEngine.MissingReferenceException: The object of type 'NetworkBouncyBall' has been destroyed but you are still trying to access it.
+                                 Your script should either check if it is null or you should not destroy the object.
+                                   at (wrapper managed-to-native) UnityEngine.Component.get_gameObject(UnityEngine.Component)
+                                   at GameServerManager.SendObjectToSpawnTo (NetworkObject pNetworkObject, DarkRift.Server.IClient pClient) [0x00001] in D:\Unity\Multiplayer\Multiplayer04\Assets\Scripts\Network\GameServerManager.cs:146 
+                                   at GameServerManager.SendAllObjectsToSpawnTo (DarkRift.Server.IClient pClient) [0x00018] in D:\Unity\Multiplayer\Multiplayer04\Assets\Scripts\Network\GameServerManager.cs:174 
+                                   at GameServerManager.ClientConnected (System.Object sender, DarkRift.Server.ClientConnectedEventArgs e) [0x00088] in D:\Unity\Multiplayer\Multiplayer04\Assets\Scripts\Network\GameServerManager.cs:100 
+                                   at DarkRift.Server.ClientManager+<>c__DisplayClass31_0.<HandleNewConnection>b__1 () [0x0001f] in <c92ea31c79004d8e862085a98c33054e>:0 
+[Info]    ClientManager         Client [2] disconnected: Shutdown.
+                                 System.Net.Sockets.SocketException (0x80004005): A request to send or receive data was disallowed because the socket had already been shut down in that direction with a previous shutdown call.
+                                 
+[Info]    ClientManager         Client [1] disconnected.
